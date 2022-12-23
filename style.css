@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+body {
+    background: linear-gradient(#F3F5FC,#779cca);
+}
+
+.content-nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    padding-top: 30px;
+}
+
+
+
+nav .logo-alura {
+    width: 10%;
+}
+
+nav .logo-alura h1 {
+    text-align: center;
+}
+
+nav .titulo-nav {
+    width: 90%;
+}
+
+.titulo-principal {
+    padding-top: 8px;
+    font-size: 26px;
+}
+
+.content-main {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 90px;
+}
+
+.content-encriptacion, .content-desencriptacion {
+    width: 35%;
+    margin: 0 100px;
+    height: 100%;
+}
+
+.caja-desencriptacion {
+    height: 70%;
+}
+
+.caja-desencriptacion > div {
+    background-color: #FFFFFF;
+    height: 350px;
+    border-radius: 50px;
+    border: 2px solid #0A3871;
+}
+
+
+#ingresar-texto {
+    text-transform: lowercase;
+    border: none;
+    background: none;
+    outline: none;
+    resize: none;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    height: 70%;
+    padding-top: 10px;
+    padding-left: 52px;
+}
+
+button {
+    width: 250px;
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.btn-encriptar, .btn-desencriptar {
+    width: 50%;
+    text-align: center;
+
+}
+
+.btn-encriptar button, .btn-desencriptar button, .btn-copiar button{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.btn-encriptar button, .btn-copiar button {
+    background-color: #0A3871;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+}
+
+.btn-desencriptar button {
+    background-color: #F3F5FC;
+    color: #0A3871;
+    border: 2px solid #0A3871;
+    border-radius: 20px;
+}
+
+.btn-desencriptar button:hover, .btn-encriptar button:hover,
+.btn-copiar button:hover {
+    opacity: 0.8;
+}
+
+.txt-desencriptado {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0A3871;
+    padding: 30px 20px;
+}
+
+
+.btn-copiar {
+    width: 250px;
+    margin: 0 auto;
+    height: 20%;
+}
+
+footer {
+    background-color: #FFFFFF;
+}
+
+.content-footer {
+    text-align: center;
+    height: 100%;
+}
+
+.informacion-footer p {
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 480px) {
+    .content-nav {
+        padding: 20px;
+    }
+    .titulo-principal {
+        padding-top: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .content-main {
+        padding: 0;
+        display: block;
+        height: 1500px;
+    }
+    .content-encriptacion {
+        width: auto;
+        margin: 0;
+        height: 50%;
+    }
+    #ingresar-texto {
+        padding: 10px 20px;
+    }
+    .botones {
+        display: block;
+        width: auto;
+        height: auto;
+    }
+    .btn-desencriptar, .btn-encriptar {
+        width: auto;
+        margin-bottom: 20px;
+    }
+    .content-desencriptacion {
+        width: auto;
+        height: 76%;  
+        margin: 50px 30px 0;
+    }
+    .caja-desencriptacion {
+        height: auto;
+    }
+    .btn-copiar{
+        height: auto;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .content-main {
+        padding: 0;
+        justify-content: space-around;
+    }
+    .content-desencriptacion, .content-encriptacion {
+        margin: 0;
+    }
+    .content-desencriptacion {
+        margin-right: 50px;
+    }
+    #ingresar-texto {
+        height: 50%;
+    }
+    .botones {
+        display: block;
+        height: auto;
+    }
+    .btn-desencriptar, .btn-encriptar {
+        width: auto;
+        margin: 20px 0;
+    }
+    .caja-desencriptacion, .btn-copiar {
+        height: 50%;
+    }
+    .btn-copiar {
+        padding-top: 80px;
+    }
+}
