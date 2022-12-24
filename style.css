@@ -164,7 +164,7 @@ footer {
         height: 50%;
     }
     #ingresar-texto {
-        padding: 10px 20px;
+        padding: 10px 40px;
     }
     .botones {
         display: block;
@@ -177,31 +177,38 @@ footer {
     }
     .content-desencriptacion {
         width: auto;
-        height: 76%;  
+        height: auto;  
         margin: 50px 30px 0;
     }
     .caja-desencriptacion {
         height: auto;
+        width: auto;
+    }
+    .caja-desencriptacion div {
+        width: auto;
     }
     .btn-copiar{
         height: auto;
         margin: 20px auto;
     }
+    .content-footer {
+        padding: 10px;
+    }   
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (min-width: 540px) and (max-width: 940px){
     .content-main {
-        padding: 0;
+        padding: 5px;
         justify-content: space-around;
     }
     .content-desencriptacion, .content-encriptacion {
         margin: 0;
-    }
-    .content-desencriptacion {
-        margin-right: 50px;
+        height: auto;
+        width: auto;
     }
     #ingresar-texto {
-        height: 50%;
+        padding: 10px 30px;
+        height: 55%;
     }
     .botones {
         display: block;
