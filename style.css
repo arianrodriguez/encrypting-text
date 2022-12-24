@@ -195,7 +195,6 @@ footer {
         padding: 10px;
     }   
 }
-
 @media screen and (min-width: 540px) and (max-width: 940px){
     .content-main {
         padding: 5px;
