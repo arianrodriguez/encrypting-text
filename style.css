@@ -13,9 +13,9 @@ body {
     width: 100%;
     height: 100px;
     display: flex;
-    padding-top: 30px;
+    padding: 30px;
+    align-items: center;
 }
-
 
 
 nav .logo-alura {
@@ -31,7 +31,6 @@ nav .titulo-nav {
 }
 
 .titulo-principal {
-    padding-top: 8px;
     font-size: 26px;
 }
 
@@ -195,6 +194,7 @@ footer {
         padding: 10px;
     }   
 }
+
 @media screen and (min-width: 540px) and (max-width: 940px){
     .content-main {
         padding: 5px;
