@@ -35,7 +35,7 @@ function encrypting_text() {
     } else {
         output.innerHTML = `
             <div class="sin-texto-img">
-                <img src="assets/sin-texto.png" alt="No se encontró texto para encriptar">
+                <img src="images/sin-texto.png" alt="No se encontró texto para encriptar">
             </div>
         `
     }
@@ -59,7 +59,7 @@ function decrypting_text() {
     } else {
         output.innerHTML = `
             <div class="sin-texto-img">
-                <img src="assets/sin-texto.png" alt="No se encontró texto para encriptar">
+                <img src="images/sin-texto.png" alt="No se encontró texto para encriptar">
             </div>
         `
     }
