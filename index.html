@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,55 +8,62 @@
     <link rel="stylesheet" href="style.css">
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--ICONO PESTAÑA-->
     <link rel="shortcut icon" href="images/icon.png">
-    <title>Encriptador de texto | Challenge Alura</title>
+    <title>Encriptador de texto</title>
 </head>
 <body>
-
     <nav>
-        <div class = "content-nav">
-            <div class = "logo-alura">
-                <h1><a href="index.html"><img src="images/logo-alura.png" alt="Alura logo"></a></h1>
-            </div>
-            <div class = "titulo-nav">
-                <h1 class = "titulo-principal">Encriptador de texto</h1>
-            </div>
+        <div class="nav-bar">
+            <div class="logo-alura"><img src="assets/logo-alura.png" alt="Alura"></div>
+            <div class="titulo-principal"><h1>Encriptador de texto | #challengeonecodificador4</h1></div>
         </div>
     </nav>
 
     <main>
-        <div class = "content-main">
-            <section class = "content-encriptacion">    
-                <textarea id="ingresar-texto" placeholder = "ingresa el texto aquí" maxlength="2000"></textarea>
-                <div class = "botones">
-                    <div class = "btn-encriptar">
-                        <button>Encriptar</button>
+        <div class="container">
+            <div class="content-main">
+                <div class="input-content">
+                    <div>
+                        <textarea id="input" placeholder="ingresa aquí tu texto"></textarea>
                     </div>
-                    <div class = "btn-desencriptar">
-                        <button>Desencriptar</button>
+                    <div class="informacion">
+                        <div class="content-inf">
+                            <i class="fa-solid fa-circle-info"></i>                            
+                            <p>¡Sólo minúsculas y sin acentos!</p>
+                        </div>
+                    </div>
+                    <div class="flex-botones">
+                        <div class="button btn-encrypting">Encriptar</div>
+                        <div class="button btn-desencrypting">Desencriptar</div>
                     </div>
                 </div>
-            </section>
-            <section class = "content-desencriptacion">
-                <div class = "caja-desencriptacion"><div><p class = "txt-desencriptado"></p></div></div>
-                <div class = "btn-copiar">
-                    <button>Copiar</button>
+                <div class="output-content">
+                    <div class="output">
+                        <div class="sin-texto-img">
+                            <img src="assets/sin-texto.png" alt="No se encontró texto para encriptar">
+                        </div>
+                    </div>
+                    <div class="button btn-copy">Copiar</div>
                 </div>
-            </section>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class = "content-footer">
-            <h1><img src="images/logo-alura-footer.png" alt="Alura logo"></h1>
-            <div class = "informacion-footer">
-                <p>Creado por el estudiante Arian Rodriguez</p>
-                <p>&copy Copyright 2022</p>
+        <div class="content-footer">
+            <div class="flex-footer">
+                <img src="assets/logo-alura-footer.png" alt="Alura">
+                <div>
+                    <p>ONE + Alura Latam</p>
+                    <p>Reto encriptador | &copy Arian Rodriguez</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

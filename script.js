@@ -1,67 +1,80 @@
-function cambiar_btn_copiado(val){
-    if(val==1){
-        const btn_copy = document.querySelector('.btn-copiar button');
-        btn_copy.innerHTML = 'Copiar';
-    }
-    else {
-        const btn_copy = document.querySelector('.btn-copiar button');
-        btn_copy.innerHTML = '¡Copiado!';
+const btn_encryp = document.querySelector('.btn-encrypting');
+const btn_desencryp = document.querySelector('.btn-desencrypting');
+const btn_copy = document.querySelector('.btn-copy');
+
+const letters = ['a', 'e', 'i', 'o', 'u'];
+
+function change_btn_copy(value) {
+    if(value==1){ //el texto ya fue copiado
+        btn_copy.textContent = '¡Copiado!';
+    } else {
+        btn_copy.textContent = 'Copiar';
     }
 }
-function encriptar_txt() {
-    const input = document.getElementById('ingresar-texto');
-    const output = document.querySelector('.txt-desencriptado');
-    output.innerHTML = '';
 
-    let arr_input = input.value.split('');
-    arr_input.forEach((value, i)=> {
-        switch(value){
-            case 'a': arr_input[i] = 'ai'; break;
-            case 'e': arr_input[i] = 'enter'; break;
-            case 'i': arr_input[i] = 'imes'; break;
-            case 'o': arr_input[i] = 'ober'; break;
-            case 'u': arr_input[i] = 'ufat'; break;
-            default: break;
-        }
-        output.innerHTML += arr_input[i];
-    });
+function encrypting_text() {
+    const keys = ['ai', 'enter', 'imes', 'ober', 'ufat'];
+    const input = document.querySelector('#input').value;
+    const output = document.querySelector('.output');
+    const input_val = input.split('');
+    let aux;
+    change_btn_copy(2);
+    if(input_val.length > 0) { //saber si es necesario desactivar la imagen de sin texto
+        output.textContent = input_val.reduce((acc,item)=>{
 
-    cambiar_btn_copiado(1);
-}
-function desencriptar_txt() {
-    /*
-        / /g : llama a reemplazar todas las coincidencias globales dentro del / /
-
-        .replace(/ /g, ' ');
-        reemplaza todo lo que esté dentro de los slash por el nuevo valor dentro de ' '
-    */ 
-    const encriptacion = [/ai/g, /enter/g, /imes/g, /ober/g, /ufat/g];
-    const palabras_clave = ['a', 'e', 'i', 'o', 'u'];
-
-    const input_des = document.querySelector('#ingresar-texto');
-    const output_enc = document.querySelector('.txt-desencriptado');
-
-    let s = input_des.value;
-    for(let i=0; i<palabras_clave.length; ++i){
-        s = s.replace(encriptacion[i], palabras_clave[i]);
-    }
-    //console.log(input_des.value.replace(/ai/g, 'a'));
-    output_enc.innerHTML = s;
-
-    cambiar_btn_copiado(1);
-}
-function copiar_txt(){
-    const content_txt = document.querySelector('.txt-desencriptado').innerText;
-    navigator.clipboard.writeText(content_txt);
+            if(letters.some((v, i)=>{
+                aux = i;
+                return v==item
+            })) {
+                acc+=keys[aux];
+            } else acc+=item;
     
-    cambiar_btn_copiado(2);
+            return acc;
+        },'');
+
+    } else {
+        output.innerHTML = `
+            <div class="sin-texto-img">
+                <img src="assets/sin-texto.png" alt="No se encontró texto para encriptar">
+            </div>
+        `
+    }
+    
+}
+function decrypting_text() {
+    const keys = [/ai/g, /enter/g, /imes/g, /ober/g, /ufat/g];
+    const input = document.querySelector('#input').value;
+    const output = document.querySelector('.output');
+    const input_val = input.split('');
+
+    change_btn_copy(2);
+
+    if(input_val.length > 0){
+        let s=input;
+        for(let i=0; i<letters.length; ++i){
+            s=s.replace(keys[i], letters[i]);
+        }
+        output.textContent = s;
+
+    } else {
+        output.innerHTML = `
+            <div class="sin-texto-img">
+                <img src="assets/sin-texto.png" alt="No se encontró texto para encriptar">
+            </div>
+        `
+    }
+    
+}
+function copy_text() {
+    const text = document.querySelector('.output').textContent;
+    navigator.clipboard.writeText(text);
+    change_btn_copy(1);
 }
 
+btn_encryp.addEventListener('click', encrypting_text);
+btn_desencryp.addEventListener('click', decrypting_text);
+btn_copy.addEventListener('click', copy_text);
 
-let btn_encriptar = document.querySelector('.btn-encriptar');
-let btn_desencriptar = document.querySelector('.btn-desencriptar');
-let btn_copiar = document.querySelector('.btn-copiar');
-
-btn_encriptar.onclick = encriptar_txt; 
-btn_desencriptar.onclick = desencriptar_txt;
-btn_copiar.onclick = copiar_txt;
+document.querySelector('#input').addEventListener('keyup', ()=>{
+    encrypting_text();
+})
